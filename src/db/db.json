@@ -7,17 +7,23 @@
       "instructor": "Dr. Sarah Johnson",
       "start_date": "2024-09-01",
       "enrollment_status": "open",
-      "materials": "Textbook,Lecture Slides and Notes",
+      "materials": [
+        "Textbook",
+        "Lecture Slides"
+      ],
       "end_date": "2024-12-15"
     },
     {
       "id": "2",
-      "name": "Chemistry Foundation",
+      "name": "Chemistry Foundations",
       "description": "Basic principles of chemistry covering atomic structure, chemical bonding, and reactions.",
       "instructor": "Prof. Michael Smith",
       "start_date": "2024-08-15",
       "enrollment_status": "closed",
-      "materials": "Lab Manual",
+      "materials": [
+        "Lab Manual",
+        "Video Tutorials"
+      ],
       "end_date": "2024-11-30"
     },
     {

@@ -47,7 +47,7 @@ const ListCourses = () => {
                         <p>Start Date: {course.start_date}</p>
                         <p>End Date: {course.end_date}</p>
                         <section>
-                        <Link to={"/courses/" + course.id}><button>View Details</button></Link>
+                        <Link to={`/courses/${course.id}`}><button>View Details</button></Link>
                         <button onClick={() => deleteCourse(course.id)}>Delete Course</button>
                         </section>
                     </section>
