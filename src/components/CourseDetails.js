@@ -1,44 +1,73 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import FormsPage from './FormsPage';
+import AddCourseModal from './AddCourseModal';
+import EditCourseModal from './EditCourseModal';
 
 const CourseDetails = () => {
     const { courseId } = useParams();
     const [course, setCourse ] = React.useState(null);
-    const [editingCourse, setEditingCourse] = React.useState(null);
+    const [courses, setCourses] = React.useState([]);
     const API = 'http://localhost:3005';
     const navigate = useNavigate();
+    
+    const [isAddingCourse, setIsAddingCourse] = React.useState(false);
+    const [isEditingCourse, setIsEditingCourse] = React.useState(false);
 
-    const addCourse = () => {
-        navigate("/forms");
+    const handleOpenAddCourseModal = () => {
+        setIsAddingCourse(true);
+    };
+    const handleCloseAddCourseModal = () => {
+        setIsAddingCourse(false);
+    };
+
+    const handleEditCourse = () => {
+        setIsEditingCourse(true);
+    };
+    const handleEditCourseClose = () => {
+        setIsEditingCourse(false);
     };
     
-    const editCourse = (course) => {
-        setEditingCourse(course);
-        navigate("/forms");
-    };
-    
-    const handleCancelEdit = () => {
-        setEditingCourse(null);
-        navigate(-1);
-    };
-    const handleSaveEdit = async (toEditCourse) => {
+
+    const handleSaveCourse = async (newCourseData) => {
         try {
-            const response = await fetch(`${API}/courses/${toEditCourse.id}`, {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(toEditCourse)
+            const response = await fetch(`${API}/courses`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newCourseData)
             });
+            const newCourse = await response.json();
             if (response.ok) {
-                setCourse(toEditCourse);
-                setEditingCourse(null);
+                setCourses([...courses, newCourse]);
+                handleCloseAddCourseModal();
+                navigate('/');
             } else {
-                console.log('Error saving course: ', response.status);
+                console.log('Error adding course data: ', response.status);
             }
         } catch (error) {
-            console.log('Error editing course: ', error);
+            console.log('Error adding course data: ', error);
         }
-    }
+    };
+
+    const handleUpdateCourse = async (toEditCourseData) => {
+        try {
+            const response = await fetch(`${API}/courses/${course.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(toEditCourseData)
+            });
+            const editedCourse = await response.json();
+            if (response.ok) {
+                setCourses(courses.map(co => (co.id === course.id ? editedCourse : co)));
+                setCourse(editedCourse);
+                handleEditCourseClose();
+            } else {
+                console.log('Error editing course data: ' + response.status);
+            }
+        } catch (error) {
+            console.log('Error adding course data: ', error);
+        }
+    };
+    
 
     React.useEffect(() => {
         const fetchCourseDetails = async () => {
@@ -67,21 +96,25 @@ const CourseDetails = () => {
         <h2>Course Details</h2>
         <h4>{course.name}</h4>
         <p>Course ID: 02300{courseId}</p>
+        <p>Course Description: {course.description}</p>
         <p>Instructor: {course.instructor}</p>
         <p>Start Date: {course.start_date}</p>
         <p>End Date: {course.end_date}</p>
         <p>Enrollment Status: {course.enrollment_status}</p>
         <p>Course Materials: {course.materials}</p>
         <section>
-            <button onClick={addCourse}>Add Course</button>
-            <button onClick={() => editCourse(course)}>Edit Course</button>
+            <button onClick={handleOpenAddCourseModal}>Add Course</button>
+            <button onClick={handleEditCourse}>Edit Course</button>
             <Link to={"/"}><button>Back</button></Link>
+            {isAddingCourse && (
+                <AddCourseModal onSave={handleSaveCourse} onCancel={handleCloseAddCourseModal}/>
+            )}
+            {isEditingCourse && (
+                <EditCourseModal courseData={course} onSave={handleUpdateCourse}
+                onCancel={handleEditCourseClose}/>
+            )}
         </section>
         
-        {editingCourse && (
-            <FormsPage courseToEdit={editingCourse} onSubmit={handleSaveEdit} onCancel={handleCancelEdit}/>
-        )}
-
     </div>
   )
 }

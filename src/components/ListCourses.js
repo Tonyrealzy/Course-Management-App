@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import CourseDetails from './CourseDetails';
 
 const ListCourses = () => {
     const [courses, setCourses] = React.useState([]);
@@ -27,6 +28,9 @@ const ListCourses = () => {
             console.log('Error deleting course: ', error);
         }
     };
+    // const updateCourses = (toBeUpdatedCourses) => {
+    //     setCourses(toBeUpdatedCourses);
+    // };
 
 
     React.useEffect(() => {
@@ -49,6 +53,9 @@ const ListCourses = () => {
                         <section>
                         <Link to={`/courses/${course.id}`}><button>View Details</button></Link>
                         <button onClick={() => deleteCourse(course.id)}>Delete Course</button>
+                        {/* {courses.length < 0 && (
+                            <CourseDetails courses={courses} updateCourses={updateCourses} />
+                        )} */}
                         </section>
                     </section>
                 </li>

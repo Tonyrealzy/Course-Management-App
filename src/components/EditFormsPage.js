@@ -1,17 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
 
-const FormsPage = ({ courseToEdit, onSave, onCancel }) => {
-    const navigate = useNavigate();
-    const [formData, setFormData] = React.useState(courseToEdit || {
-        name: '',
-        decription: '',
-        instructor: '',
-        start_date: '',
-        end_date: '',
-        enrollment_status: '',
-        materials: ''
-    });
+const EditFormsPage = ( courseToEdit, onSubmit, onCancel ) => {
+    const [formData, setFormData] = React.useState(courseToEdit);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,12 +10,12 @@ const FormsPage = ({ courseToEdit, onSave, onCancel }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // onSave(formData);
+        onSubmit(formData);
     };
 
   return (
     <div>
-        <h2>{courseToEdit ? courseToEdit.name : 'Add Course'}</h2>
+        <h2>{courseToEdit.name}</h2>
         <form onSubmit={handleSubmit}>
             <label> Course Name: 
                 <input type='text' name='name' value={ formData.name } onChange={handleChange}/>
@@ -55,11 +45,11 @@ const FormsPage = ({ courseToEdit, onSave, onCancel }) => {
             <input type='text' name='materials' value={ formData.materials } onChange={handleChange}/>
             </label>
             <br></br>
-            <button type='submit'>{courseToEdit ? 'SAVE' : 'ADD'}</button>
+            <button type='submit'>SAVE</button>
             <button onClick={onCancel}>CANCEL</button>
         </form>
     </div>
   )
 }
 
-export default FormsPage
+export default EditFormsPage
