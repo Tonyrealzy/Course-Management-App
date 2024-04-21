@@ -53,9 +53,6 @@ const ListCourses = () => {
                         <section>
                         <Link to={`/courses/${course.id}`}><button>View Details</button></Link>
                         <button onClick={() => deleteCourse(course.id)}>Delete Course</button>
-                        {/* {courses.length < 0 && (
-                            <CourseDetails courses={courses} updateCourses={updateCourses} />
-                        )} */}
                         </section>
                     </section>
                 </li>
