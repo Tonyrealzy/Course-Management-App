@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import CourseDetails from './CourseDetails';
 
 const ListCourses = () => {
     const [courses, setCourses] = React.useState([]);
@@ -39,8 +38,8 @@ const ListCourses = () => {
 
 
   return (
-    <div>
-        <h3>Course List</h3>
+    <>
+        <section>
         <ul>
             {courses.map(course => (
                 <li key={course.id}>
@@ -58,8 +57,8 @@ const ListCourses = () => {
                 </li>
             ))}
         </ul>
-
-    </div>
+        </section>
+    </>
   )
 }
 

@@ -44,7 +44,7 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
         setErrors(newErrors);
       };
       const handleMaterialsChange = (event) => {
-        setEnrollmentStatus(event.target.value);
+        setMaterials(event.target.value);
         const newErrors = { ...errors };
         newErrors.materials = validateName(event.target.value) ? '' : 'Course materials field is required';
         setErrors(newErrors);
@@ -56,7 +56,7 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
         setErrors(newErrors);
       };
       const handleEndDateChange = (event) => {
-        setStartDate(event.target.value);
+        setEndDate(event.target.value);
         const newErrors = { ...errors };
         newErrors.end_date = validateDate(event.target.value) ? '' : 'Invalid date format';
         setErrors(newErrors);

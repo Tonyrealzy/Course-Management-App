@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
-}
+@import './colors.css';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navBar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2.5rem 0 1.5rem 0;
+  align-content: center;
+  width: 100%;
+  border-bottom: 0.1px solid grey;
 }
-
-.App-link {
-  color: #61dafb;
+.logo {
+  padding-left: 4rem;
+  font-size: 6vh;
+  font-weight: bolder;
 }
+.navLinkCol {
+  display: flex;
+  flex-direction: row;
+}
+.navLink {
+  padding: 0rem 1rem;
+  font-size: 2.2vh;
+  font-weight: 600;
+  color: var(--black);
+  border: none;
+  background-color: var(--white);
+}
+.navLink:active {
+  color: var(--primary);
+}
+.navLink:hover {
+  transform: scale(1.05);
+  color: var(--primary);
+}
+.navSearch {
+  padding: 7.5px 20px;
+  margin: 0 1rem;
+  border-radius: 10px;
+  font-size: 2vh;
+  background-color: var(--white);
+  border: 0.1px solid grey;
+}
+.navLogin {
+  margin-right: 4rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  font-size: 2vh;
+  font-weight: 600;
+  border: none;
+  color: var(--black);
+}
+.navLogin:hover {
+  color: var(--white);
+}
+.navLogin:hover, .navLink:hover, .navSearch:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+.main {}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 912px) {
+  .navBar {
+    flex-direction: column;
+    width: 30%;
   }
-  to {
-    transform: rotate(360deg);
+  .navLinks {
+    flex-direction: column;
   }
 }
