@@ -1,26 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import NavToggle from './NavToggle';
 
 const PageLayout = ({ children }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const mainContentRef = React.useRef(null);
+
+
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && mainContentRef.current && !mainContentRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+      setIsOpen(false);
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen, mainContentRef]);
 
   return (
     <>
-    <section className='navbarContainer'>
-    <Navbar isOpen={isOpen} onToggle={toggleNavbar}/>
-    <NavToggle isOpen={isOpen} onToggle={toggleNavbar}/>
-    </section>
+    <Navbar />
 
-    <main className='main'>
+    <main ref={mainContentRef}>
         {children}
     </main>
-    
-    <div className='backdrop' onClick={toggleNavbar}/>
+
     <Footer/>
     </>
   )

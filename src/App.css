@@ -1,15 +1,13 @@
 @import './colors.css';
 
-.navbarContainer {
-  border-bottom: 1px solid var(--grey);
-  flex-direction: row;
-  padding: 2.5rem 0 1.5rem 0;
-  margin-bottom: 2rem;
-}
 .topNav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--grey);
+  flex-direction: row;
+  padding: 2.5rem 0 1.5rem 0;
+  margin-bottom: 2rem;
 }
 .navBar {
   display: flex;
@@ -21,6 +19,9 @@
   padding-left: 4rem;
   font-size: 6vh;
   font-weight: bolder;
+}
+#logoSpan {
+  color: var(--primary);
 }
 .navToggle {
   display: none;
@@ -226,34 +227,68 @@
 }
 
 @media screen and (max-width: 912px) {
-  .navBar {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .navLinks {
-    flex-direction: row;
-  }
-  .logo {
-    padding: 0 0 2rem 2rem;
-    font-size: 3vh;
-  }
   .navToggle {
     display: block;
+    position: relative;
   }
-  .navLinkCol {
+  .topNav {
+    padding: 0.5rem 0 1rem 0;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .navbar-closed {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
   }
-  .searchIcon, .navSearch {
+  .navbar-closed .navBar {
     display: none;
   }
+  .navbar-closed .navToggle {
+    position: relative;
+  }
+  .navbar-open .navBar {
+    background-color: var(--grey);
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+  .navbar-open .navBar .navLinkCol {
+    flex-direction: column;
+  }
   .navBar-right {
+    display: flex;
+    flex-direction: column;
     padding: 0;
   }
+  .navLink {
+    padding: 0.5rem 0rem;
+    background-color: var(--grey);
+  }
+  .navSearch {
+    padding: 10px auto;
+    background-color: var(--grey);
+  }
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .searchIcon {
+    display: none;
+  }
   .navLogin {
-    margin-right: 0;
-    width: 100px;
+    background-color: var(--grey);
     color: var(--primary);
-    background-color: var(--light);
+    padding: 1rem 0;
   }
 
   .courseName {
@@ -290,7 +325,6 @@
   .error {
     font-size: 1.2vh;
   }
-
   .footLink {
     padding: 0 0.3rem;
   }

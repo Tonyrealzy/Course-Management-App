@@ -95,7 +95,7 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
         if (typeof enrollment_status !== 'string' || !enrollment_status.trim()) {
             newErrors.enrollment_status = 'Course enrollment-status field cannot be empty!';
         }
-        if (typeof materials !== 'object' || materials.length === 0) {
+        if (materials.length === 0) {
             newErrors.materials = 'Course materials field must be filled!';
         }
 
