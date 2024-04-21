@@ -4,10 +4,13 @@
       "name": "Introduction to Biology",
       "description": "Fundamental concepts of biology including cellular structure, genetics, and evolution.",
       "instructor": "Dr. Sarah Johnson",
-      "start_date": "2024-09-01",
-      "end_date": "2024-12-15",
+      "start_date": "2024-09-02",
+      "end_date": "2024-12-13",
       "enrollment_status": "open",
-      "materials": "Textbook, Lecture Slides, House-checks",
+      "materials": [
+        "Textbook",
+        "Lecture Slides"
+      ],
       "id": "1"
     },
     {
@@ -256,6 +259,16 @@
         "Lecture Slides"
       ],
       "end_date": "2024-12-22"
+    },
+    {
+      "id": "4ba8",
+      "name": "Test Data",
+      "description": "Test Data",
+      "instructor": "Test Data",
+      "start_date": "2024-03-12",
+      "end_date": "2024-03-12",
+      "enrollment_status": "Test Data",
+      "materials": "Test Data"
     }
   ]
 }

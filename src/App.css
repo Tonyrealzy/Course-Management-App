@@ -116,7 +116,7 @@
 .courseDetailsUnit {
   width: 50%;
   list-style-type: none;
-  margin: 2rem 1rem;
+  margin: 1rem;
   padding: 0 2rem;
   border: 2px solid var(--secondary);
   border-radius: 10px;
@@ -181,10 +181,10 @@
 }
 .input {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   height: 1.8rem;
   font-size: 2vh;
-  border: 2px solid var(--grey);
+  border: 2px solid var(--secondary);
   border-radius: 10px;
   margin: 0 auto 0.5rem auto;
 }

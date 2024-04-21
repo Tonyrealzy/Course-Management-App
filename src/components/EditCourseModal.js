@@ -4,61 +4,72 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
     const [name, setName] = React.useState(courseData.name);
     const [description, setDescription] = React.useState(courseData.description);
     const [instructor, setInstructor] = React.useState(courseData.instructor);
-    const [start_date, setStartDate] = React.useState(courseData.name);
-    const [end_date, setEndDate] = React.useState(courseData.name);
-    const [enrollment_status, setEnrollmentStatus] = React.useState(courseData.name);
-    const [materials, setMaterials] = React.useState(courseData.name);
+    const [start_date, setStartDate] = React.useState(courseData.start_date);
+    const [end_date, setEndDate] = React.useState(courseData.end_date);
+    const [enrollment_status, setEnrollmentStatus] = React.useState(courseData.enrollment_status);
+    const [materials, setMaterials] = React.useState(courseData.materials);
 
     const [errors, setErrors] = React.useState({});
 
-    const validateName = (name) => {
-        return name.trim() !== '';
-    };
-    const validateDate = (date) => {
+    const validateStartDate = (date) => {
         const datePattern = /^\d{4}-\d{2}-d{2}$/;
         return datePattern.test(date);
     };
-
+    const validateEndDate = (date) => {
+        const datePattern = /^\d{4}-\d{2}-d{2}$/;
+        return datePattern.test(date);
+    };
+    
     const handleNameChange = (event) => {
         setName(event.target.value);
         const newErrors = { ...errors };
-        newErrors.name = validateName(event.target.value) ? '' : 'Course name is required';
+        newErrors.name = event.target.value.trim() !== '' ? '' : 'Course name is required';
         setErrors(newErrors);
       };
       const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
         const newErrors = { ...errors };
-        newErrors.description = validateName(event.target.value) ? '' : 'Course description is required';
+        newErrors.description = event.target.value.trim() !== '' ? '' : 'Course description is required';
         setErrors(newErrors);
       };
       const handleInstructorChange = (event) => {
         setInstructor(event.target.value);
         const newErrors = { ...errors };
-        newErrors.instructor = validateName(event.target.value) ? '' : 'Course instructor name is required';
+        newErrors.instructor = event.target.value.trim() !== '' ? '' : 'Course instructor name is required';
         setErrors(newErrors);
       };
       const handleEnrollmentStatusChange = (event) => {
         setEnrollmentStatus(event.target.value);
         const newErrors = { ...errors };
-        newErrors.enrollment_status = validateName(event.target.value) ? '' : 'Course enrollment-status is required';
+        newErrors.enrollment_status = event.target.value.trim() !== '' ? '' : 'Course enrollment-status is required';
         setErrors(newErrors);
       };
       const handleMaterialsChange = (event) => {
         setMaterials(event.target.value);
         const newErrors = { ...errors };
-        newErrors.materials = validateName(event.target.value) ? '' : 'Course materials field is required';
+        newErrors.materials = event.target.value.trim() !== '' ? '' : 'Course materials field is required';
         setErrors(newErrors);
       };
       const handleStartDateChange = (event) => {
         setStartDate(event.target.value);
         const newErrors = { ...errors };
-        newErrors.start_date = validateDate(event.target.value) ? '' : 'Invalid date format';
+        if (validateStartDate(event.target.value)) {
+            delete newErrors.start_date;
+        } else {
+            newErrors.start_date = 'Invalid start-date format';
+        }
+        // newErrors.start_date = validateStartDate(event.target.value) ? '' : 'Invalid start-date format';
         setErrors(newErrors);
       };
       const handleEndDateChange = (event) => {
         setEndDate(event.target.value);
         const newErrors = { ...errors };
-        newErrors.end_date = validateDate(event.target.value) ? '' : 'Invalid date format';
+        if (validateEndDate(event.target.value)) {
+            delete newErrors.start_date;
+        } else {
+            newErrors.end_date = 'Invalid end-date format';
+        }
+        // newErrors.end_date = validateEndDate(event.target.value) ? '' : 'Invalid end-date format';
         setErrors(newErrors);
       };
 
@@ -66,25 +77,25 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
         event.preventDefault();
         const newErrors = {};
 
-        if (!validateName(name)) {
+        if (typeof name !== 'string' || !name.trim()) {
             newErrors.name = 'Course name is required!';
         }
-        if (!validateName(instructor)) {
+        if (typeof instructor !== 'string' || !instructor.trim()) {
             newErrors.instructor = 'Course instructor name is required!';
         }
-        if (!validateName(description)) {
+        if (typeof description !== 'string' || !description.trim()) {
             newErrors.description = 'Course description is required!';
         }
-        if (!validateName(start_date)) {
-            newErrors.start_date = 'Invalid date pattern!';
+        if (isNaN(new Date(start_date))) {
+            newErrors.start_date = 'Invalid start-date pattern!';
         }
-        if (!validateName(end_date)) {
-            newErrors.start_date = 'Invalid date pattern!';
+        if (isNaN(new Date(end_date))) {
+            newErrors.end_date = 'Invalid end-date pattern!';
         }
-        if (!validateName(enrollment_status)) {
+        if (typeof enrollment_status !== 'string' || !enrollment_status.trim()) {
             newErrors.enrollment_status = 'Course enrollment-status field cannot be empty!';
         }
-        if (!validateName(materials)) {
+        if (typeof materials !== 'object' || materials.length === 0) {
             newErrors.materials = 'Course materials field must be filled!';
         }
 

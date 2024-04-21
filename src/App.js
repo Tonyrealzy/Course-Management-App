@@ -4,8 +4,6 @@ import CourseDetails from './components/CourseDetails';
 import PageLayout from './components/PageLayout';
 import ListCourses from './components/ListCourses';
 import Home from './components/Home';
-import AddCourseModal from './components/AddCourseModal';
-import EditCourseModal from './components/EditCourseModal';
 
 function App() {
   return (
@@ -25,18 +23,6 @@ function App() {
           <Route path='/courses' element={
             <PageLayout>
               <ListCourses/>
-            </PageLayout>
-          }/>
-
-          <Route path='/add-course' element={
-            <PageLayout>
-              <AddCourseModal/>
-            </PageLayout>
-          }/>
-
-          <Route path='/edit-course' element={
-            <PageLayout>
-              <EditCourseModal/>
             </PageLayout>
           }/>
           
