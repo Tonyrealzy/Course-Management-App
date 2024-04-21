@@ -219,17 +219,14 @@
       "end_date": "2024-12-12"
     },
     {
-      "id": "20",
       "name": "Neurobiology",
       "description": "Study of the nervous system, including structure, function, and neurological disorders.",
       "instructor": "Prof. Amanda Roberts",
       "start_date": "2024-09-07",
+      "end_date": "2024-12-22",
       "enrollment_status": "closed",
-      "materials": [
-        "Textbook",
-        "Lecture Slides"
-      ],
-      "end_date": "2024-12-22"
+      "materials": "Textbook, Lecture Slides",
+      "id": "20"
     },
     {
       "id": "5444",
