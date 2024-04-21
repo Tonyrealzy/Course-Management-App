@@ -179,6 +179,25 @@
   justify-content: center;
   align-items: center;
 }
+.input {
+  width: 100%;
+  padding: 0 1rem;
+  height: 1.8rem;
+  font-size: 2vh;
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+  margin: 0 auto 0.5rem auto;
+}
+.input:focus, .input:hover {
+  border: 2px solid var(--secondary) !important;
+  transform: scale(1.05);
+}
+.error {
+  font-size: 1.5vh;
+  color: var(--primary);
+  line-height: 0%;
+  margin: 0;
+}
 
 .footerContainer {
   display: flex;
@@ -263,6 +282,13 @@
   .courseDetailsButtonSection {
     flex-direction: column;
     margin: 0 0 1rem 0;
+  }
+  .input {
+    font-size: 1.5vh;
+    padding: 0 0.5rem;
+  }
+  .error {
+    font-size: 1.2vh;
   }
 
   .footLink {

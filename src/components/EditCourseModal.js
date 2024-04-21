@@ -116,42 +116,42 @@ const EditCourseModal = ({ courseData, onSave, onCancel }) => {
             <h2>Edit Course Details</h2>
             <form onSubmit={handleSubmit}>
                 <label> Course Name: 
-                    <input type='text' name='name' value={ name } onChange={handleNameChange}/>
+                    <input className='input' type='text' name='name' value={ name } onChange={handleNameChange}/>
                     {errors.name && <p className="error">{errors.name}</p>}
                 </label>
                 <br></br>
                 <label>Description: 
-                    <input type='text' name='description' value={ description } onChange={handleDescriptionChange}/>
+                    <input className='input' type='text' name='description' value={ description } onChange={handleDescriptionChange}/>
                     {errors.description && <p className="error">{errors.description}</p>}
                 </label>
                 <br></br>
                 <label>Instructor: 
-                    <input type='text' name='instructor' value={ instructor } onChange={handleInstructorChange}/>
+                    <input className='input' type='text' name='instructor' value={ instructor } onChange={handleInstructorChange}/>
                     {errors.instructor && <p className="error">{errors.instructor}</p>}
                 </label>
                 <br></br>
                 <label>Start Date: 
-                <input type='text' name='start_date' value={ start_date } onChange={handleStartDateChange}/>
+                <input className='input' type='text' name='start_date' value={ start_date } onChange={handleStartDateChange}/>
                 {errors.start_date && <p className="error">{errors.start_date}</p>}
                 </label>
                 <br></br>
                 <label>End Date: 
-                <input type='text' name='end_date' value={ end_date } onChange={handleEndDateChange}/>
+                <input className='input' type='text' name='end_date' value={ end_date } onChange={handleEndDateChange}/>
                 {errors.end_date && <p className="error">{errors.end_date}</p>}
                 </label>
                 <br></br>
                 <label>Enrollment Status: 
-                <input type='text' name='enrollment_status' value={ enrollment_status } onChange={handleEnrollmentStatusChange}/>
+                <input className='input' type='text' name='enrollment_status' value={ enrollment_status } onChange={handleEnrollmentStatusChange}/>
                 {errors.enrollment_status && <p className="error">{errors.enrollment_status}</p>}
                 </label>
                 <br></br>
                 <label>Materials: 
-                <input type='text' name='materials' value={ materials } onChange={handleMaterialsChange}/>
+                <input className='input' type='text' name='materials' value={ materials } onChange={handleMaterialsChange}/>
                 {errors.materials && <p className="error">{errors.materials}</p>}
                 </label>
                 <br></br>
-                <button type='submit'>SAVE</button>
-                <button onClick={onCancel}>CANCEL</button>
+                <button className='courseButton' type='submit'>SAVE</button>
+                <button className='courseButton' onClick={onCancel}>CANCEL</button>
             </form>
         </div>
     </div>

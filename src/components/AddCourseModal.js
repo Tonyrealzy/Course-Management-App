@@ -93,42 +93,49 @@ const AddCourseModal = ({ onSave, onCancel }) => {
         <h2>Add Course</h2>
             <form onSubmit={handleSubmit}>
                 <label> Course Name: 
-                    <input type='text' name='name' value={ newCourse.name } onChange={handleChange} />
+                <br></br>
+                    <input className='input' type='text' name='name' value={ newCourse.name } onChange={handleChange} />
                     {errors.name && <p className='error'>{errors.name}</p>}
                 </label>
                 <br></br>
-                <label>Description: 
-                    <input type='text' name='description' value={ newCourse.description } onChange={handleChange}/>
+                <label>Description:
+                <br></br> 
+                    <input className='input' type='text' name='description' value={ newCourse.description } onChange={handleChange}/>
                     {errors.description && <p className="error">{errors.description}</p>}
                 </label>
                 <br></br>
                 <label>Instructor: 
-                    <input type='text' name='instructor' value={ newCourse.instructor } onChange={handleChange}/>
+                    <br></br>
+                    <input className='input' type='text' name='instructor' value={ newCourse.instructor } onChange={handleChange}/>
                     {errors.instructor && <p className="error">{errors.instructor}</p>}
                 </label>
                 <br></br>
-                <label>Start Date: 
-                <input type='text' name='start_date' value={ newCourse.start_date } onChange={handleChange}/>
+                <label>Start Date:
+                <br></br> 
+                <input className='input' type='text' name='start_date' value={ newCourse.start_date } onChange={handleChange}/>
                 {errors.start_date && <p className="error">{errors.start_date}</p>}
                 </label>
                 <br></br>
-                <label>End Date: 
-                <input type='text' name='end_date' value={ newCourse.end_date } onChange={handleChange}/>
+                <label>End Date:
+                <br></br> 
+                <input className='input' type='text' name='end_date' value={ newCourse.end_date } onChange={handleChange}/>
                 {errors.end_date && <p className='error'>{errors.end_date}</p>}
                 </label>
                 <br></br>
                 <label>Enrollment Status: 
-                <input type='text' name='enrollment_status' value={ newCourse.enrollment_status } onChange={handleChange}/>
+                <br></br>
+                <input className='input' type='text' name='enrollment_status' value={ newCourse.enrollment_status } onChange={handleChange}/>
                 {errors.enrollment_status && <p className="error">{errors.enrollment_status}</p>}
                 </label>
                 <br></br>
                 <label>Materials: 
-                <input type='text' name='materials' value={ newCourse.materials } onChange={handleChange}/>
+                <br></br>
+                <input className='input' type='text' name='materials' value={ newCourse.materials } onChange={handleChange}/>
                 {errors.materials && <p className="error">{errors.materials}</p>}
                 </label>
                 <br></br>
-                <button type='submit'>SAVE</button>
-                <button onClick={onCancel}>CANCEL</button>
+                <button className='courseButton' type='submit'>SAVE</button>
+                <button className='courseButton' onClick={onCancel}>CANCEL</button>
             </form>
         </div>
     </div>
