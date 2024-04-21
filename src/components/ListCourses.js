@@ -31,7 +31,6 @@ const ListCourses = () => {
     //     setCourses(toBeUpdatedCourses);
     // };
 
-
     React.useEffect(() => {
         fetchCourses();
     }, []);
@@ -39,25 +38,25 @@ const ListCourses = () => {
 
   return (
     <>
-        <section>
-        <ul>
+        <div>
+        <h3 className='coursePageTitle'>Popular Courses</h3>
+        <ul className='courseListUnitContainer'>
             {courses.map(course => (
-                <li key={course.id}>
-                    <section>
-                        <h4>{course.name}</h4>
-                        <p>Description: {course.description}</p>
-                        <p>Instructor: {course.instructor}</p>
-                        <p>Start Date: {course.start_date}</p>
-                        <p>End Date: {course.end_date}</p>
-                        <section>
-                        <Link to={`/courses/${course.id}`}><button>View Details</button></Link>
-                        <button onClick={() => deleteCourse(course.id)}>Delete Course</button>
-                        </section>
+                <li className='courseListUnit' key={course.id}>
+                    <section className='courseUnit'>
+                        <h4 className='courseName'>{course.name}</h4>
+                        <p>{course.description}</p>
+                        <p>{course.instructor}</p>
+                        <p>From {course.start_date} to {course.end_date}</p>
+                        <aside className='courseButtonSection'>
+                        <Link to={`/courses/${course.id}`}><button className='courseButton'>View Details</button></Link>
+                        <button className='courseButton' onClick={() => deleteCourse(course.id)}>Delete Course</button>
+                        </aside>
                     </section>
                 </li>
             ))}
         </ul>
-        </section>
+        </div>
     </>
   )
 }

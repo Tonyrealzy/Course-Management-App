@@ -1,25 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-        <p>Evolve - Copyright © 2024. All rights reserved.
+    <article className='footerContainer'>
+      <div className='footer'>
+        <p>Evolve - Copyright © 2024. All rights reserved. Ready to create your next course? <a className='footerLink' href='/'>Sign up today!</a>
             <br></br>
-            Ready to create your next course? <a>Sign up today!</a>
+            Developed by <a className='footerLink' href='https://github.com/Tonyrealzy'>Umehobi Arinze</a>. To learn more about us, click <a className='footerLink' href='https://github.com/Tonyrealzy/Course-Management-App'>here.</a>
             <br></br>
-            Developed by Umehobi Arinze. To learn more about us, click <a>here.</a>
             <br></br>
             Follow us on social media for learning tips!
             <br></br>
-            Github: <a></a>
-            LinkedIn: <a></a>
+            Github: <a className='footerLink' href='https://github.com/Tonyrealzy'>https://github.com/Tonyrealzy</a>
+            <br></br>
+            LinkedIn: <a className='footerLink' href='https://www.linkedin.com/in/arinzeumehobi'>https://www.linkedin.com/in/arinzeumehobi</a>
         </p>
-        <ul>
-            <a>Help Center</a>
-            <a>Terms of Service</a>
-            <a>Privacy Policy</a>
-        </ul>
-    </div>
+
+        <section className='footerBottom'>
+            <p className='footLink' onClick={() => {navigate('/')}}>Help Center</p>
+            <p className='footLink' onClick={() => {navigate('/')}}>Terms of Service</p>
+            <p className='footLink' onClick={() => {navigate('/')}}>Privacy Policy</p>
+        </section>
+      </div>
+    </article>
+    
   )
 }
 

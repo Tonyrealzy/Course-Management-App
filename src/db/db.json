@@ -256,6 +256,16 @@
         "Lecture Slides"
       ],
       "end_date": "2024-12-22"
+    },
+    {
+      "id": "b54a",
+      "name": "Random Data",
+      "description": "Random Data",
+      "instructor": "Random Data",
+      "start_date": "2024-12-12",
+      "end_date": "2024-12-14",
+      "enrollment_status": "Random Data",
+      "materials": "Random Data"
     }
   ]
 }

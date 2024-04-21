@@ -14,6 +14,7 @@ const CourseDetails = () => {
     const [isEditingCourse, setIsEditingCourse] = React.useState(false);
 
     const handleOpenAddCourseModal = () => {
+        // navigate('/add-course');
         setIsAddingCourse(true);
     };
     const handleCloseAddCourseModal = () => {
@@ -92,9 +93,10 @@ const CourseDetails = () => {
         return <div>Loading...</div>
     }
     return (
-        <div>
-        <h2>Course Details</h2>
-        <h4>{course.name}</h4>
+        <article className='courseDetailsSection'>
+        <div className='courseDetailsUnit'>
+        <h2 className='coursePageTitle'>Course Details</h2>
+        <h4 className='courseName'>{course.name}</h4>
         <p>Course ID: 02300{courseId}</p>
         <p>Course Description: {course.description}</p>
         <p>Instructor: {course.instructor}</p>
@@ -103,19 +105,26 @@ const CourseDetails = () => {
         <p>Enrollment Status: {course.enrollment_status}</p>
         <p>Course Materials: {course.materials}</p>
         <section>
-            <button onClick={handleOpenAddCourseModal}>Add Course</button>
-            <button onClick={handleEditCourse}>Edit Course</button>
-            <Link to={"/"}><button>Back</button></Link>
+            <aside className='courseDetailsButtonSection'>
+            <button className='courseDetailsButton' onClick={handleOpenAddCourseModal}>Add Course</button>
+            <button className='courseDetailsButton' onClick={handleEditCourse}>Edit Course</button>
+            <Link to={"/"}><button className='courseDetailsButton'>Back</button></Link>
+            </aside>
             {isAddingCourse && (
-                <AddCourseModal onSave={handleSaveCourse} onCancel={handleCloseAddCourseModal}/>
+                <div className='addCourseModal'>
+                    <AddCourseModal onSave={handleSaveCourse} onCancel={handleCloseAddCourseModal}/>
+                </div>
             )}
             {isEditingCourse && (
+                <div className='editCourseModal'>
                 <EditCourseModal courseData={course} onSave={handleUpdateCourse}
                 onCancel={handleEditCourseClose}/>
+                </div>
             )}
         </section>
         
-    </div>
+        </div>
+        </article>
   )
 }
 
