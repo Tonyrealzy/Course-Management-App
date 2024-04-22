@@ -3,6 +3,22 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const PageLayout = ({ children }) => {
+  
+  return (
+    <>
+    <Navbar />
+
+    <main>
+        {children}
+    </main>
+
+    <Footer/>
+    </>
+  )
+}
+
+export default PageLayout
+
   // const [isOpen, setIsOpen] = useState(false);
   // const mainContentRef = React.useRef(null);
 
@@ -18,18 +34,3 @@ const PageLayout = ({ children }) => {
   //   document.addEventListener('click', handleClickOutside);
   //   return () => document.removeEventListener('click', handleClickOutside);
   // }, [isOpen, mainContentRef]);
-
-  return (
-    <>
-    <Navbar />
-
-    <main>
-        {children}
-    </main>
-
-    <Footer/>
-    </>
-  )
-}
-
-export default PageLayout
