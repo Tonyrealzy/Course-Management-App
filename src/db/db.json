@@ -245,27 +245,24 @@
       "end_date": "2024-12-12"
     },
     {
-      "id": "20",
       "name": "Neurobiology",
       "description": "Study of the nervous system, including structure, function, and neurological disorders.",
       "instructor": "Prof. Amanda Roberts",
       "start_date": "2024-09-07",
-      "enrollment_status": "closed",
-      "materials": [
-        "Textbook",
-        "Lecture Slides"
-      ],
-      "end_date": "2024-12-22"
+      "end_date": "2024-12-22",
+      "enrollment_status": "open",
+      "materials": "Textbook, Lecture Slides",
+      "id": "20"
     },
     {
-      "name": "Test Case",
-      "description": "Test Case",
-      "instructor": "Mr Charles",
-      "start_date": "2024-11-22",
-      "end_date": "2024-11-25",
-      "enrollment_status": "Closed",
-      "materials": "Class notes, Lectures",
-      "id": "2387"
+      "id": "e90a",
+      "name": "Introduction to CSS",
+      "description": "Fundamental concepts of styling",
+      "instructor": "Dr Fred",
+      "start_date": "2024-12-15",
+      "end_date": "2024-12-30",
+      "enrollment_status": "open",
+      "materials": "Udemy videos"
     }
   ]
 }

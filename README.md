@@ -8,6 +8,7 @@ In the project directory, you can run:
 
 ### json-server --watch src/db/db.json --port 3005
 This starts the demo JSON server on port 3005 of your browser.
+Open [http://localhost:3005/courses](http://localhost:3005/courses) to view it in your browser.
 
 ### `npm start`
 

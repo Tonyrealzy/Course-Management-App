@@ -50,7 +50,7 @@ const Navbar = ({ onToggle}) => {
               <span className='searchIcon'>{searchIcon}</span>
               <input className='navSearch' placeholder='Search Evolve'/>
             </aside>
-            <button className='navLogin'>Log in</button>
+            <button className='navLogin' onClick={handleToggle}>Log in</button>
           </section>
         </div>
       </aside>
