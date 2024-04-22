@@ -200,6 +200,64 @@
   margin: 0;
 }
 
+.homeSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.leftHomeSection {
+  justify-content: center;
+  align-items: center;
+}
+.leftHomeSection {
+  padding: 2rem;
+  flex: 1;
+}
+.rightHomeSection {
+  padding: 2rem 3rem;
+  flex: 1.5;
+}
+.rightHomeSection {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Home1, .Home3{
+  width: 50%;
+}
+.homeButton {
+  background-color: var(--dark);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  padding: 14px 50px;
+  border-radius: 12px;
+  font-weight: 500;
+  margin: 1.5rem 7.5rem;
+  position: relative;
+}
+.homeButton:hover {
+  background-color: var(--light);
+  color: var(--dark);
+  font-weight: 700;
+}
+.h1 {
+  font-size: 12vh;
+  line-height: 0%;
+  text-align: center;
+  color: var(--primary);
+}
+.h3 {
+  font-size: 4vh;
+  text-align: center;
+}
+.homeWriteUp {
+  font-size: 3vh;
+  text-align: center;
+}
+
 .footerContainer {
   display: flex;
   margin: 2rem 0 0 0;
@@ -233,8 +291,12 @@
   }
   .topNav {
     padding: 0.5rem 0 1rem 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     width: 100%;
+  }
+  .logo {
+    padding-left: 1rem;
+    font-size: 2.5vh;
   }
   .navbar-closed {
     display: flex;
@@ -250,12 +312,12 @@
     position: relative;
   }
   .navbar-open .navBar {
-    background-color: var(--grey);
+    background-color: var(--dark);
     position: fixed;
     display: flex;
     top: 0;
     left: 0;
-    height: 70%;
+    height: 50%;
     width: 100%;
     flex-direction: column;
     align-content: center;
@@ -271,11 +333,16 @@
   }
   .navLink {
     padding: 0.5rem 0rem;
-    background-color: var(--grey);
+    color: var(--light);
+    background-color: var(--dark);
   }
   .navSearch {
     padding: 10px auto;
-    background-color: var(--grey);
+    background-color: var(--dark);
+    border: 1px solid var(--primary);
+  }
+  .navSearch:hover {
+    border: 2px solid var(--primary);
   }
   .searchContainer {
     display: flex;
@@ -286,7 +353,7 @@
     display: none;
   }
   .navLogin {
-    background-color: var(--grey);
+    background-color: var(--dark);
     color: var(--primary);
     padding: 1rem 0;
   }
@@ -324,6 +391,49 @@
   }
   .error {
     font-size: 1.2vh;
+  }
+
+  .homeSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftHomeSection {
+    justify-content: center;
+    align-items: center;
+  }
+  .leftHomeSection, .rightHomeSection {
+    padding: 1rem 1.5rem;
+    flex: 1;
+  }
+  .Home1, .Home3{
+    width: 50%;
+  }
+  .Home2 {
+    width: 30%;
+  }
+  .homeButton {
+    padding: 10px 50px;
+    border-radius: 12px;
+    font-weight: 500;
+    margin: 1.5rem 5rem;
+    position: relative;
+  }
+  .homeButton:hover {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: 700;
+  }
+  .h1 {
+    font-size: 10vh;
+    margin: 4rem 0;
+  }
+  .h3 {
+    font-size: 4vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .homeWriteUp {
+    font-size: 2.5vh;
   }
   .footLink {
     padding: 0 0.3rem;

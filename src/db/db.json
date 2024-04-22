@@ -53,17 +53,14 @@
       "end_date": "2024-12-20"
     },
     {
-      "id": "5",
       "name": "Organic Chemistry",
       "description": "Study of carbon compounds including structure, bonding, and reactions.",
       "instructor": "Dr. Christopher Lee",
       "start_date": "2024-08-25",
+      "end_date": "2024-12-05",
       "enrollment_status": "open",
-      "materials": [
-        "Textbook",
-        "Lecture Slides"
-      ],
-      "end_date": "2024-12-05"
+      "materials": "Textbook,Lecture Slides,Classes",
+      "id": "5"
     },
     {
       "id": "6",
@@ -259,6 +256,16 @@
         "Lecture Slides"
       ],
       "end_date": "2024-12-22"
+    },
+    {
+      "name": "Test Case",
+      "description": "Test Case",
+      "instructor": "Mr Charles",
+      "start_date": "2024-11-22",
+      "end_date": "2024-11-25",
+      "enrollment_status": "Closed",
+      "materials": "Class notes, Lectures",
+      "id": "2387"
     }
   ]
 }
