@@ -36,10 +36,13 @@ const Navbar = ({ onToggle}) => {
         </button>
 
         <div className='navBar'>
+        <button className='navToggleClose' onClick={handleToggle}>
+        <span>{hamburgerIcon}</span>
+        </button>
           <section className='navLinkCol'>
-              <button onClick={() => navigate('/')} className='navLink'>Home</button>
-              <button onClick={() => navigate('/courses')} className='navLink'>Courses</button>
-              <button className='navLink'>FAQs</button>
+              <button onClick={() => {navigate('/'); handleToggle()}} className='navLink'>Home</button>
+              <button onClick={() => {navigate('/courses'); handleToggle()}} className='navLink'>Courses</button>
+              <button className='navLink' onClick={handleToggle}>FAQs</button>
           </section>
           
           <section className='navBar-right'>

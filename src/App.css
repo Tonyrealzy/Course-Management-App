@@ -9,6 +9,9 @@
   padding: 2.5rem 0 1.5rem 0;
   margin-bottom: 2rem;
 }
+.navToggleClose {
+  display: none;
+}
 .navBar {
   display: flex;
   flex-direction: row;
@@ -288,6 +291,19 @@
   .navToggle {
     display: block;
     position: relative;
+  }
+  .navbar-open .navToggleClose {
+    display: block;
+    width: 35px;
+    top: 6%;
+    right: 4%;
+    position: absolute;
+  }
+  .navBar {
+    position: relative;
+  }
+  .navbar-close .navToggleClose {
+    display: none;
   }
   .topNav {
     padding: 0.5rem 0 1rem 0;
