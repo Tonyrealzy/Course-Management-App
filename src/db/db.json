@@ -247,6 +247,16 @@
       "end_date": "2024-12-30",
       "enrollment_status": "open",
       "materials": "Udemy videos"
+    },
+    {
+      "id": "9c1d",
+      "name": "BRD 222",
+      "description": "The course Tabitha is currently studying.",
+      "instructor": "Mr Arinze",
+      "start_date": "2023-06-19",
+      "end_date": "2024-05-01",
+      "enrollment_status": "Open",
+      "materials": "Course materials"
     }
   ]
 }
