@@ -27,6 +27,7 @@ const ListCourses = () => {
             console.log('Error deleting course: ', error);
         }
     };
+    
     // const updateCourses = (toBeUpdatedCourses) => {
     //     setCourses(toBeUpdatedCourses);
     // };
